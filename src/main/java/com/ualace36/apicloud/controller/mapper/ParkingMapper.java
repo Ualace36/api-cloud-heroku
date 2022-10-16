@@ -1,6 +1,7 @@
 package com.ualace36.apicloud.controller.mapper;
 
 import com.ualace36.apicloud.model.Parking;
+import com.ualace36.apicloud.model.dto.ParkingCreateDTO;
 import com.ualace36.apicloud.model.dto.ParkingDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
@@ -18,5 +19,12 @@ public class ParkingMapper {
     public List<ParkingDTO> toParkingDTOToList(List<Parking> parkingList) {
 
        return parkingList.stream().map(this::toParkingDTO).collect(Collectors.toList());
+    }
+    public Parking toParking(ParkingDTO dto){
+       return MODEL_MAPPER.map(dto, Parking.class);
+    }
+
+    public Parking toParkinCreate(ParkingCreateDTO dto) {
+        return MODEL_MAPPER.map(dto, Parking.class);
     }
 }

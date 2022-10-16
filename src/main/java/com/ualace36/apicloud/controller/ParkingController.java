@@ -2,13 +2,12 @@ package com.ualace36.apicloud.controller;
 
 import com.ualace36.apicloud.controller.mapper.ParkingMapper;
 import com.ualace36.apicloud.model.Parking;
+import com.ualace36.apicloud.model.dto.ParkingCreateDTO;
 import com.ualace36.apicloud.model.dto.ParkingDTO;
 import com.ualace36.apicloud.service.ParkingService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -38,6 +37,13 @@ public class ParkingController {
     Parking parking=(Parking) parkingService.findById(id);
     ParkingDTO result = parkingMapper.toParkingDTO(parking);
         return ResponseEntity.ok(result);
+    }
+    @PostMapping
+    public ResponseEntity<ParkingDTO> create(@RequestBody ParkingCreateDTO dto){
+     var parkingCreate = parkingMapper.toParkinCreate(dto);
+     var parking = parkingService.create(parkingCreate);
+    var result = parkingMapper.toParkingDTO(parking);
+        return ResponseEntity.status(HttpStatus.CREATED).body(result);
     }
 
 }
