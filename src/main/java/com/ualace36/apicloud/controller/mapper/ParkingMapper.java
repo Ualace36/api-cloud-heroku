@@ -6,6 +6,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class ParkingMapper {
@@ -15,6 +16,7 @@ public class ParkingMapper {
        return MODEL_MAPPER.map(parking,ParkingDTO.class);
    }
     public List<ParkingDTO> toParkingDTOToList(List<Parking> parkingList) {
-       return null;
+
+       return parkingList.stream().map(this::parkingDTO).collect(Collectors.toList());
     }
 }
