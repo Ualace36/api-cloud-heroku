@@ -49,4 +49,16 @@ public class ParkingService {
         return parkingCreate;
 
     }
+
+    public void delete(String id) {
+        findById(id);
+        parkingMap.remove(id);
+        }
+
+    public Parking update(String id, Parking parkingCreate) {
+      Parking parkingUpdate = findById(id);
+        parkingUpdate.setState(parkingCreate.getState());
+      return parkingUpdate;
+    }
 }
+

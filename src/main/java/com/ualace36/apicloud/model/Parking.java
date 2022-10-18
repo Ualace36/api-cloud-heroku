@@ -55,8 +55,8 @@ public class Parking {
         this.model = model;
     }
 
-    public String getColor() {
-        return color;
+    public String getColor(String color) {
+        return this.color;
     }
 
     public void setColor(String color) {
