@@ -16,14 +16,14 @@ public class ParkingService {
 
     private static Map<String, Parking> parkingMap = new HashMap<>();
 
-//    static {
-//        var id =getUUID();
-//        var id1 =getUUID();
-//        var parking = new Parking(id, "OZS 2548", "BA", "207", "PRETO");
-//        var parking2 = new Parking(id1, "OZT 2544", "BA", "208", "GRAFITTE");
-//        parkingMap.put(id, parking);
-//        parkingMap.put(id1, parking2);
-//    }
+    static {
+        var id =getUUID();
+        var id1 =getUUID();
+        var parking = new Parking(id, "OZS 2548", "BA", "207", "PRETO");
+        var parking2 = new Parking(id1, "OZT 2544", "BA", "208", "GRAFITTE");
+        parkingMap.put(id, parking);
+        parkingMap.put(id1, parking2);
+    }
 
     public List<Parking> findAll(){
         return parkingMap.values().stream().collect(Collectors.toList());
@@ -61,6 +61,13 @@ public class ParkingService {
         parkingUpdate.setModel(parkingCreate.getModel());
         parkingUpdate.setLicense(parkingCreate.getLicense());
       return parkingUpdate;
+    }
+
+    public Parking exite(String id) {
+        //recuperar o estacionado
+        //atualizar data de saída
+        //calcular o valor
+        return null;
     }
 }
 
