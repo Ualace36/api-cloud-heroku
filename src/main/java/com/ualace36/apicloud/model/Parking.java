@@ -1,7 +1,9 @@
 package com.ualace36.apicloud.model;
 
 import java.time.LocalDateTime;
-//colocando as nomeclatura em inglês para adaptar a realidade do mercado
+//colocando as nomeclatura
+
+
 public class Parking {
     private String id;
     private String license;
@@ -33,6 +35,10 @@ public class Parking {
 
     public String getLicense() {
         return license;
+    }
+
+    public String getColor() {
+        return color;
     }
 
     public void setLicense(String license) {
