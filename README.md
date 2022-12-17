@@ -27,7 +27,7 @@ Esse projeto se trata de uma Api Rest para controle de estacionamento. Com a fun
 
 ## :interrobang: Motivo
 
-O motivo é trazer uma solução na gestão dos fluxos de veículos e o aluguel do espaço, por meio da automatização do sistema de gerenciamento de estacionamento de alta rotatividade de veículo, como de um hospital e shopping, por exemplo. 
+O motivo é trazer uma solução na gestão dos fluxos de veículos e o aluguel do espaço, por meio da automatização do sistema de gerenciamento de estacionamento de alta rotatividade de veículo, como de um hospital e shopping, por exemplo, um controle de acesso automatizado. 
 
 ## :seedling: Requisitos Mínimos
 
